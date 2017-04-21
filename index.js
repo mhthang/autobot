@@ -4,14 +4,12 @@ var answeredThreads = {};
 
 // Create simple echo bot
 login({email: "mhthang94@gmail.com", password: "taowenrui1993"}, function callback (err, api) {
-    if(err) {
-		 
-            api.setOptions({
+	
+	api.setOptions({
 			forceLogin: true
 			});
-			console.error(err);
-		
-		
+    if(err) {
+		console.error(err);
 	}
 	
 

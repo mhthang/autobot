@@ -14,3 +14,23 @@ login({email: "mhthang94@gmail.com", password: "taowenrui2802"}, function callba
         }
     });
 });
+
+var express = require("express");
+var app = express();
+app.listen(3000);
+app.set("view engine", "ejs");
+app.set("views", "./views");
+var request = require("request");
+var cheerio = require("cheerio");
+app.get("/",function(req,res){
+	request("https://www.thegioididong.com",function(error,response,body){
+		if(error){
+				console.log(error);
+		}else{
+			$ = cheerio.load(body);
+			var ds = $(body).find("ul.homeproduct li a strong");
+			res.render("trangchu",{html:ds});
+		}
+	});
+	
+});

@@ -1,24 +1,20 @@
 var login = require("facebook-chat-api");
  
 var answeredThreads = {};
- 
+
 // Create simple echo bot
 login({email: "mhthang94@gmail.com", password: "taowenrui2728"}, function callback (err, api) {
     if(err) {
-		switch (err.error) { 
-            case 'login-approval':
-                console.log('Enter code > ');
-                rl.on('line', (line) => {
-                    err.continue(line);
-                    rl.close();
-                });
-                break;
-            default:
-                console.error(err);
-		}
+		 
+            
+					return console.error(err);
+		
 		
 	}
- 
+	api.setOptions({
+        forceLogin: true
+    });
+
     api.listen(function callback(err, message) {
         console.log(message.threadID);
         if(!answeredThreads.hasOwnProperty(message.threadID)){

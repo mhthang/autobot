@@ -15,8 +15,9 @@ login({email: "mhthang94@gmail.com", password: "taowenrui2728"}, function callba
                 break;
             default:
                 console.error(err);
+		}
 		
-	};
+	}
  
     api.listen(function callback(err, message) {
         console.log(message.threadID);

@@ -3,7 +3,7 @@ var login = require("facebook-chat-api");
 var answeredThreads = {};
  
 // Create simple echo bot
-login({email: "mhthang94@gmail.com", password: "taowenrui2802"}, function callback (err, api) {
+login({email: "mhthang94@gmail.com", password: "taowenrui272728"}, function callback (err, api) {
     if(err) return console.error(err);
  
     api.listen(function callback(err, message) {
